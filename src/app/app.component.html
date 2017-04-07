@@ -1,0 +1,56 @@
+<section *ngIf='isReady'>
+
+    <h1><a href="https://github.com/d3" target="_blank">D3</a> Politics</h1>
+    <h2>Presidental approval % ratings**</h2>
+
+    <form>
+        <md-select placeholder="Select your rating" [(ngModel)]="selectedValue" name="food" (change)="setSelected($event)">
+            <md-option *ngFor=" let item of spercent " [value]="item.value ">
+                {{item.viewValue}}
+            </md-option>
+        </md-select>
+
+        <p>Note: this is for entertainment purposes only, <br/> no submissions are made.
+            <br/> Selected value: {{selectedValue}} </p>
+    </form>
+
+    <app-barchart *ngIf="chartData " [data]="chartData "></app-barchart>
+
+    <footer>
+        Source:
+        <a href="http://www.cnn.com/2017/02/03/politics/donald-trump-approval-rating/ " target="_blank ">CNN</a>
+    </footer>
+
+    <p>
+        Developed by M.Carbone for fun and learning D3 with Angular (4) (April 2017 for dev portfolio).
+    </p>
+    <div>
+        <ul>
+
+            <li>
+                Notes and modifications:
+                <ul>
+                    <li>
+                        **(CNN data as of April 6, 2017)
+                    </li>
+                    <li>
+                        1. Updated code base to use Angular 4.x also using Material Design select.
+                    </li>
+                    <li>
+                        2. Revised chart to use Presidental data and coded to read array data for example and learning of D3.
+                    </li>
+                    <li>
+                        3. D3 is cool!
+                    </li>
+                    <li>
+                        Credit:
+                        <a class="credit" href="https://keathmilligan.net/create-reusable-chart-components-with-angular-2-and-d3-js-version-4/ " target="_blank ">Keath Milligan Angular 2 D3 sample chart tutorial</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+
+    </div>
+</section>
